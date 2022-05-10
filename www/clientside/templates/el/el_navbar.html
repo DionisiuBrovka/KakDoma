@@ -1,0 +1,40 @@
+{% load static %}
+
+<script>
+    var Scrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        if (Scrollpos > window.innerHeight - 70) {
+            document.getElementById("nav").style.top = "0";
+        } else {
+            document.getElementById("nav").style.top = "-70px";
+        }
+        Scrollpos = window.pageYOffset;
+    }
+</script>
+
+<div class="row">
+    <div class="col nav" id="nav">
+        <div class="container ">
+            <div class="ltext">
+                <a href="/">
+                    <h1>Как Дома</h1>
+                </a>
+            </div>
+
+            <div class="">
+                
+                <a href="">Предложения</a>
+            </div>
+
+            <div class="">
+                
+                <a href="">Новости</a>
+            </div>
+
+            <div class="">
+                
+                <a href="">Личный кабинет</a>
+            </div>
+        </div>
+    </div>
+</div>

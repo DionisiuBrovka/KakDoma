@@ -1,5 +1,163 @@
 {% extends "root.html" %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
 
 {% block content %}
-    <h1>Прикол</h1>
+
+    {% include 'el/el_navbar.html' %}
+    
+    <div class="row">
+        <div class="col logo-head">
+            <div class="logo">
+                <h1 class="logo-text">Как Дома</h1>
+                <p>Бабушкины блинчики с утра и запах скошенной травы, студеный зимний мороз и осенний шелест листьев, все это мы не сможем вам предоставить. Но мы можем найти лучшее жилье по самым доступным ценам.</p>
+            </div>
+            <div class="down-btn">
+                <a href="javascript:scroll();">
+                    <img class="down-btn-img" src="{% static 'img/down_btn.png' %}" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" id="content">
+        <div class="col content">
+            <div class="container" >
+                <div class="row">
+                    <div class="col">
+                        <h3>Вы еще не с нами? Сделайте это сейчас <a href="" class="btn btn-primary float-right">Войти/Зарегистрироваться</a></h3>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <form action="" class="search-form-lan">
+                            <div class="form-row align-items-center">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-tree-city"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Куда едем ?" aria-label="Населеный пункт">
+                                    </div>
+                                </div>
+                                <div class="date-search">
+                                    <input class="form-control date-search-left" type="date">
+                                    <input class="form-control date-search-right" type="date">
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user-group"></i></span>
+                                        </div>
+                                        <input type="number" class="form-control" placeholder="Сколько человек ?" aria-label="Количество человек"   >
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-primary">Найти варианты</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>Популярно:</h4>
+                        <hr>
+
+                        <div class="pop-gallerya">
+                            {% for news in news %}
+                                {% include 'el/el_news_small_card.html' %}
+                            {% endfor %}
+
+                            <div class="pop-gall-item-last">
+                                <a href="">
+                                    <div>
+                                        <p>Больше интересных новостей<br>...</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col about-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="about-wrapper">
+                            <h1 class="about-text">Почему мы ?</h1>
+                            <p>Мы предоставляем уникальные услуги для поиска и бронирования отелей, хостелов, агроусадеб и апартаментов в Беларуси более чем в 100 городах. Мы можем найти лучший вариант по лучшей цене и не берем за это плату. Уже 1000+ пользователей доверяют нам.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="about-wrapper">
+                            <h1><i class="fa-solid fa-house-chimney-window"></i></h1>
+                            <h2>100+</h2>
+                            <p>Мест по всей Беларуси</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="about-wrapper">
+                            <h1><i class="fa-solid fa-users"></i></h1>
+                            <h2>1000+</h2>
+                            <p>Пользователей</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="about-wrapper">
+                            <h1><i class="fa-solid fa-hand-holding-dollar"></i></h1>
+                            <h2>Самые</h2>
+                            <p>Лучшие цены и уникальные предлоржения</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col author-block">
+            <div class="container">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col footer-down-text">
+                        <p>2022 © <a href="">Brovka Dionisiu</a> Сайт не является комерчиским продуктом</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block addscript %}
+    <script>
+        function scroll(){
+            const el = document.getElementById('content');
+            el.scrollIntoView({behavior: "smooth"});
+        }
+    </script>
 {% endblock %}

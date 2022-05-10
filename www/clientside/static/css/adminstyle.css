@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Miratrix";
+    src: url('../fonts/Miratrix-Normal.otf') format("opentype");
+}
+
+.admin-logo h1{
+    color: white !important;
+    font-family: 'Miratrix';
+}
+
+div.breadcrumbs, div.breadcrumbs a {
+    background-color: yellowgreen;
+    color: #0d2862 !important;
+}
+
+div.breadcrumbs a{
+    font-weight: bold;
+}
+
+.module h2, .module caption, .inline-group h2, #header {
+    background-image: linear-gradient(to right, #134E5E 0%, #1c9b60  51%, #0d2862  100%);
+    background-position: left;
+    background-size: 200% auto;
+}

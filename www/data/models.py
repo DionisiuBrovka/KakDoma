@@ -52,6 +52,19 @@ class Room(models.Model):
     def __str__(self):
         return self.point.short_name + " - " + self.name
 
+class News(models.Model):
+    title = models.CharField(verbose_name='Загаловок', max_length=200, blank=False)
+    short_discription = models.CharField(verbose_name='Краткое описание', max_length=200, blank=True)
+    discription = models.TextField(verbose_name='Описание', blank=True)
+    text = models.TextField(verbose_name='Текст статьи')
+    pub_date = models.DateTimeField(verbose_name='Дата публикации', auto_now=True, editable=False)
+    icon = models.ImageField(verbose_name='Фото', blank=False, null=True)
 
+    class Meta:
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
+
+    def __str__(self):
+        return self.title + " - " + str(self.pub_date)
 
     

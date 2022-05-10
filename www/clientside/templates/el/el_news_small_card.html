@@ -1,0 +1,17 @@
+{% load static %}
+
+<div class="pop-gall-item">
+    <a href="">
+        <img src="/media/{{news.icon}}" alt="">
+        <div class="pop-gall-item-box">
+            <div class="pop-gall-item-box-text">
+                <h6>
+                    {{news.title}}
+                </h6>
+                <hr>
+                <p>{{news.short_discription}}</p>
+                <small class="float-right">{{news.pub_date}}</small>
+            </div>
+        </div>
+    </a>
+</div>

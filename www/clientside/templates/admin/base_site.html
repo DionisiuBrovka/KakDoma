@@ -1,0 +1,15 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block branding %}
+    {% block extrastyle %}
+        <link rel='stylesheet' href="{% static 'css/adminstyle.css' %}">
+    {% endblock %}
+    
+        <div class="admin-logo">
+            <h1>
+                Как Дома 
+            </h1>
+            <p>Административная панель </p>
+        </div>
+{% endblock %}
