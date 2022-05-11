@@ -1,0 +1,12 @@
+{% extends "root-page.html" %}
+{% load static %}
+
+{% block title %}Новости{% endblock %}
+{% block content %}
+    <div class="container">
+        {% for news in news %}
+            {% include 'el/news_card.html' %}
+        {% endfor %}
+    </div>
+{% endblock %}
+

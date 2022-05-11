@@ -1,3 +1,7 @@
 www/config.py
 
 __pycache__/
+
+kakdoma-env
+
+migrations

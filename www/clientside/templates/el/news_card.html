@@ -1,0 +1,17 @@
+{% load static %}
+
+<div class="row">
+    <div class="col">
+        <div class="box box-news">
+            <div>
+                <img src="/media/{{news.icon}}" alt="">
+            </div>
+            <div>
+                <h3>{{news.title}}</h3>
+                <small>{{news.pub_date}}</small>
+                <hr>
+                <p>{{news.short_discription}}</p>
+            </div>
+        </div>
+    </div>
+</div>

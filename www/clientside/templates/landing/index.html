@@ -1,4 +1,4 @@
-{% extends "root.html" %}
+{% extends "root-landing.html" %}
 {% load static %}
 
 {% block title %}Главная{% endblock %}
@@ -34,26 +34,36 @@
 
                 <div class="row">
                     <div class="col">
-                        <form action="" class="search-form-lan">
+                        <form action="" method="GET" class="search-form-lan">
                             <div class="form-row align-items-center">
                                 <div class="col">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-tree-city"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Куда едем ?" aria-label="Населеный пункт">
+                                        <input name="town" type="text" list="t" class="form-control" placeholder="Куда едем ?" aria-label="Населеный пункт">
+                                        <datalist id="t">
+                                            {% for town in towns %}
+                                                <option value="{{town.name}}"></option>
+                                            {% endfor %}
+                                        </datalist>
                                     </div>
                                 </div>
                                 <div class="date-search">
-                                    <input class="form-control date-search-left" type="date">
-                                    <input class="form-control date-search-right" type="date">
+                                    <input name="date[]" id="date_now" class="form-control date-search-left" type="date" min="">
+                                    <input name="date[]" id="date_post" class="form-control date-search-right" type="date" min="">
+                                    <script>
+                                        date_now.min = new Date().toISOString().split("T")[0];
+                                        date_now.value = new Date().toISOString().split("T")[0];
+                                        date_post.min = new Date().toISOString().split("T")[0];
+                                    </script>
                                 </div>
                                 <div class="col">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user-group"></i></span>
                                         </div>
-                                        <input type="number" class="form-control" placeholder="Сколько человек ?" aria-label="Количество человек"   >
+                                        <input name="count" type="number" class="form-control" min="1" placeholder="Сколько человек ?" aria-label="Количество человек"   >
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -129,27 +139,51 @@
     <div class="row">
         <div class="col author-block">
             <div class="container">
-
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col footer">
-            <div class="container">
                 <div class="row">
+                    <div class="col-auto">
+                        <img class="autor-pic" src="{% static 'img\76963003.jpg' %}" alt="">
+                    </div>
                     <div class="col">
+                        <h1>Сайт разработал:</h1>
+                        <h3>Дионисий Бровка</h3>
+                        <hr>
+                        <p><p>Мужчина, 22 года, родился 4 мая 1999</p>
 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col footer-down-text">
-                        <p>2022 © <a href="">Brovka Dionisiu</a> Сайт не является комерчиским продуктом</p>
+                        <h5>Контакты</h5>
+                        <p>+375 (29) 839-80-54<br>
+                            <a href="mailto:dev.dionisiu.brovka@gmail.com">dev.dionisiu.brovka@gmail.com</a> — предпочитаемый способ связи</p>
+                        
+                        <h5>Ключевые навыки</h5>
+                        <h5>
+                            <span class="badge badge-warning">C++</span>
+                            <span class="badge badge-success">C#</span>
+                            <span class="badge badge-secondary">PHP</span>
+                            <span class="badge badge-info">HTML/CSS/JS</span>
+                            <span class="badge badge-info">SQL</span>
+                            <span class="badge badge-primary">Python</span>
+                            <span class="badge badge-primary">Flask</span>
+                            <span class="badge badge-primary">Django/DjangoCMS</span>
+                            <span class="badge badge-primary">Wagtail</span>
+                        </h5>
+                        
+                        <h5>Обо мнe</h5>
+                        <p>Ищу работу в сфере ИТ. Легко обучаюсь, способен критически мыслить и решать поставленные задачи разными способами. Легко адаптируюсь под любой коллектив. Увлекаюсь всем что связано с визуальным творчеством: рисование, 3d моделирование и скульптинг, монтаж роликов</p></p>
+                        <h5>Профиль Github</h5>
+                        <p><a class="btn btn-primary" href="https://github.com/DionisiuBrovka">Посмотреть</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="row" id="footer">
+        <div class="col">
+            <div class="container-fluid">
+                {% include 'el/footer.html' %}
+            </div>
+        </div>
+    </div>
+    
     
 {% endblock %}
 

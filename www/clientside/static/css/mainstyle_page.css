@@ -1,0 +1,139 @@
+@font-face {
+    font-family: "Miratrix";
+    src: url('../fonts/Miratrix-Normal.otf') format("opentype");
+}
+
+@font-face {
+    font-family: "Buyan";
+    src: url('../fonts/BuyanThin.ttf');
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+a {
+    color: yellowgreen;
+}
+
+a:hover {
+    color: greenyellow;
+    text-decoration: none;
+}
+
+a.dark{
+    color: darkolivegreen;
+}
+
+a.dark:hover{
+    color: darkseagreen;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.box {
+    min-height: 5rem;
+
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+
+    padding: 0.5rem;
+
+    border: 1px solid lightgray;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.container-fluid#header{
+    min-height: 20vh;
+
+    background-color: yellowgreen;
+    background-image: url('../img/head.jpg');
+    background-size: 30%;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.container-fluid#content{
+    min-height: 110vh;
+
+    background-color: white;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.container-fluid#footer{
+    min-height: 10vh;
+
+    padding: 1rem;
+
+    background-color: rgb(30, 30, 30);
+    color: rgb(76, 76, 76);
+    font-size: 10pt;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.navbar{
+    position: fixed;
+    z-index: 999;
+    top: 0px;
+
+    width: 100%;
+
+    background-color: white;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar .container a{
+    margin-right: 2rem;
+
+    color: black;
+    font-family: 'Buyan';
+    font-size: 18pt;
+    font-weight: 600;
+}
+
+.navbar h1 {
+    margin: 0px;
+}
+
+.navbar .container a:hover{
+    text-decoration: none;
+    color: greenyellow;
+}
+
+.navbar .container a.nav-bar-logo {
+    color: yellowgreen;
+    font-family: 'Miratrix';
+}
+
+.navbar .container a.nav-bar-logo:hover {
+    text-decoration: none;
+    color: greenyellow;
+}
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.box-news{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+.box-news img{
+    height: 200px;
+    width: 300px;
+
+    object-fit: cover;
+
+    margin: -0.5rem 1rem -0.5rem -0.5rem;
+
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------- */

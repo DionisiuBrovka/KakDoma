@@ -67,4 +67,14 @@ class News(models.Model):
     def __str__(self):
         return self.title + " - " + str(self.pub_date)
 
+class Towns(models.Model):
+    name = models.CharField(verbose_name='название города', max_length=200, blank=False)
+
+    class Meta:
+        verbose_name = 'Город'
+        verbose_name_plural = 'Города'
+
+    def __str__(self):
+        return self.name
+
     
